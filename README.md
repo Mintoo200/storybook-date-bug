@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+Bug report available on [Github](https://github.com/storybookjs/storybook/issues/14618)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Describe the bug**
+I added a custom class extending Date to my project adding some helper functions but storybook considers every occurence where I use it as a simple Date and throws a `<helper function> is not a function`. This problem does not occur when I start the CRA app with the Calendar directly.
 
-## Available Scripts
+**To Reproduce**
+1. clone [this repository on Github](https://github.com/Mintoo200/storybook-date-bug)
+2. start the storybook with `$ yarn; yarn storybook`
+3. navigate to `localhost:6006`
+4. go to `Calendar>Default`
 
-In the project directory, you can run:
+You can start the working CRA app with `$ yarn start`
 
-### `yarn start`
+**Expected behavior**
+The calendar should be displayed with no error.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**System**
+```
+Environment Info:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  System:
+    OS: macOS 11.2.3
+    CPU: (8) x64 Intel(R) Core(TM) i5-8257U CPU @ 1.40GHz
+  Binaries:
+    Node: 12.18.3 - /usr/local/bin/node
+    Yarn: 1.22.5 - /usr/local/bin/yarn
+    npm: 6.14.6 - /usr/local/bin/npm
+  Browsers:
+    Chrome: 89.0.4389.128
+    Safari: 14.0.3
+  npmPackages:
+    @storybook/addon-actions: ^6.2.8 => 6.2.8 
+    @storybook/addon-essentials: ^6.2.8 => 6.2.8 
+    @storybook/addon-links: ^6.2.8 => 6.2.8 
+    @storybook/node-logger: ^6.2.8 => 6.2.8 
+    @storybook/preset-create-react-app: ^3.1.7 => 3.1.7 
+    @storybook/react: ^6.2.8 => 6.2.8 
+```
 
-### `yarn test`
+**Additional context**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The problem still occurs when the storybook is built and served with `npx serve`. I also tried reinstalling all dependencies.
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
