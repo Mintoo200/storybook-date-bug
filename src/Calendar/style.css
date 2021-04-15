@@ -1,0 +1,21 @@
+.calendar table, .calendar th, .calendar td, .calendar caption {
+  border: 1px solid black;
+}
+
+.calendar caption>div {
+  display: flex
+}
+.calendar caption>div div {
+  flex-grow: 1;
+}
+.calendar caption button {
+  flex-grow: 0;
+}
+
+.calendar .last-month {
+  opacity: .5;
+}
+
+.calendar .today {
+  background: cyan;
+}
